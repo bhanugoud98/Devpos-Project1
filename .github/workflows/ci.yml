@@ -24,6 +24,7 @@ jobs:
                   pip install -r backend/requirements.txt
                   pip install pytest
 
-        # - name: Run Tests
-        #   run: |
-        #     pytest
+            - name: Run Tests
+              run: |
+                  export PYTHONPATH=$PYTHONPATH:$(pwd)/backend
+                  pytest backend/test_app.py

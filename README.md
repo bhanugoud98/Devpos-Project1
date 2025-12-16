@@ -6,28 +6,26 @@ A complete DevOps portfolio project demonstrating a 3-tier application deployed 
 This project is a simple Task Manager application built to showcase end-to-end DevOps skills, including:
 - **Containerization**: Docker & Docker Compose
 - **Orchestration**: Kubernetes (K8s)
-- **Infrastructure as Code**: Terraform
+- **Infrastructure as Code**: Terraform (AWS)
 - **CI/CD**: GitHub Actions
 - **Monitoring**: Prometheus & Grafana
+
+## 🏗 Architecture
+```mermaid
+graph TD;
+    Client[Web Browser] -->|HTTP| Nginx[Frontend Nginx];
+    Nginx -->|API Calls| Flask[Backend Flask API];
+    Flask -->|Logic| Db[(In-Memory DB)];
+    Flask -->|Metrics| Prometheus[Prometheus];
+    Prometheus -->|Data| Grafana[Grafana];
+```
 
 ## 🛠 Tech Stack
 - **Frontend**: HTML, CSS, JavaScript (Nginx)
 - **Backend**: Python Flask
-- **Infrastructure**: Docker, Kubernetes, Terraform
+- **Infrastructure**: AWS EC2, Docker, Kubernetes
 - **CI/CD**: GitHub Actions
-- **Monitoring**: Prometheus, Grafana
-
-## 📂 Directory Structure
-```
-.
-├── backend/            # Flask API
-├── frontend/           # HTML/JS Client
-├── k8s/                # Kubernetes Manifests
-├── terraform/          # Terraform Configuration
-├── .github/workflows/  # CI/CD Pipelines
-├── monitoring/         # Prometheus & Grafana Configs
-└── docker-compose.yml  # Local Development
-```
+- **IaC**: Terraform
 
 ## 🏃‍♂️ How to Run
 
@@ -42,9 +40,12 @@ Access the frontend at `http://localhost:8080`.
 kubectl apply -f k8s/
 ```
 
-### Infrastructure Provisioning
+### Infrastructure Provisioning (AWS)
 ```bash
-cd terraform
+cd terraform/aws
 terraform init
 terraform apply
 ```
+
+## 🤝 Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
