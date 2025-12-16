@@ -49,3 +49,5 @@ terraform apply
 
 ## 🤝 Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+<!-- CI test: pipeline validation -->
+<!-- CI test: pipeline validation -->
